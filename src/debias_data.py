@@ -44,7 +44,7 @@ def reproject_features_w_regul(data, protected_cols, nonprotected_cols, lambda_)
     return r + lambda_*(nonprotect - r)
 
 
-def debais_data(protected_cols, nonprotected_cols, lambda_=0):
+def debias_data(protected_cols, nonprotected_cols, lambda_=0):
     """
     Debias data, data pipeline
 

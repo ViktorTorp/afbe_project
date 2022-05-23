@@ -48,7 +48,7 @@ def test_model(model, X, y, kfold, scaler=None, model_params={}):
 
     for train_index, test_index in kfold.split(X, y):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-        y_train, y_test = y[train_index], y[test_index]
+        y_train = np.array(y)[train_index]
         if scaler:
             X_train, X_test = scaler(X_train, X_test)
 
