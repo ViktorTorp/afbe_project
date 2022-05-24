@@ -39,13 +39,13 @@ def import_data():
     data_init = data.copy()
     # Make a categorical column for blackness where we set a threshold (just for visualization purposes)
     racepctblack = np.asarray(data.racepctblack)
-    threshold = 0.4
+    threshold = 0.15
     IsBlack = [1 if x > threshold else 0 for x in racepctblack]
     data["IsBlack"] = IsBlack
 
     # Make a categorical column for crime
     crime_rate = np.asarray(data.ViolentCrimesPerPop)
-    threshold_crime = 0.4
+    threshold_crime = 0.7
     # threshold_crime = np.quantile(crime_ratei, 0.75)
     HighCrime = [1 if x > threshold_crime else 0 for x in crime_rate]
     data["HighCrime"] = HighCrime
